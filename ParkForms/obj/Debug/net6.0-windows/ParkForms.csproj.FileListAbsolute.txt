@@ -1,0 +1,17 @@
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\bin\Debug\net6.0-windows\ParkForms.exe
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\bin\Debug\net6.0-windows\ParkForms.deps.json
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\bin\Debug\net6.0-windows\ParkForms.runtimeconfig.json
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\bin\Debug\net6.0-windows\ParkForms.dll
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\bin\Debug\net6.0-windows\ParkForms.pdb
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.csproj.AssemblyReference.cache
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.Form1.resources
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.csproj.GenerateResource.cache
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.AssemblyInfoInputs.cache
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.AssemblyInfo.cs
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.csproj.CoreCompileInputs.cache
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.dll
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\refint\ParkForms.dll
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.pdb
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ParkForms.genruntimeconfig.cache
+C:\Users\taylor.oliveira\Desktop\ParkForms\ParkForms\obj\Debug\net6.0-windows\ref\ParkForms.dll
