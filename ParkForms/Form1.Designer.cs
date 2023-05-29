@@ -170,7 +170,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.AppWorkspace;
-            label5.Location = new Point(617, 76);
+            label5.Location = new Point(602, 76);
             label5.Name = "label5";
             label5.Size = new Size(121, 17);
             label5.TabIndex = 13;
@@ -179,12 +179,13 @@
             // lblVagas
             // 
             lblVagas.AutoSize = true;
+            lblVagas.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblVagas.ForeColor = Color.LawnGreen;
-            lblVagas.Location = new Point(734, 78);
+            lblVagas.Location = new Point(716, 76);
             lblVagas.Name = "lblVagas";
-            lblVagas.Size = new Size(38, 15);
+            lblVagas.Size = new Size(28, 17);
             lblVagas.TabIndex = 14;
-            lblVagas.Text = "label6";
+            lblVagas.Text = "ND";
             // 
             // Form1
             // 

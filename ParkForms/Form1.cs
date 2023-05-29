@@ -5,8 +5,8 @@ namespace ParkForms
 {
     public partial class Form1 : Form
     {
-        private string caminhoEntrada;
-        private string caminhoSaida;
+        private string caminhoEntrada = @"C:\Users\Taylor\Desktop\parkforms\EntradaVeiculos.dat";
+        private string caminhoSaida = @"C:\Users\Taylor\Desktop\parkforms\SaidaVeiculos.dat";
 
         private List<Veiculo> lista;
         private int vagas = 50;
@@ -16,23 +16,6 @@ namespace ParkForms
             InitializeComponent();
             lista = new List<Veiculo>();
             exibeVagas();
-
-            caminhoEntrada = Path.Combine(Directory.GetCurrentDirectory(), "EntradaVeiculos.dat");
-            caminhoSaida = Path.Combine(Directory.GetCurrentDirectory(), "SaidaVeiculos.dat");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            if (!File.Exists(caminhoEntrada))
-            {
-                File.Create(caminhoEntrada);
-            }
-
-            if (!File.Exists(caminhoSaida))
-            { 
-                File.Create(caminhoSaida);
-            }
-
         }
 
         private void exibeVagas()
@@ -141,6 +124,7 @@ namespace ParkForms
                             exibeVagas();
 
                             lstSaida.Items.Add($"{veiculo.PlacaVeiculo} | {veiculo.DataEntrada} | {veiculo.HoraEntrada} | {veiculo.TempoPermanencia} minutos | R$ {veiculo.ValorCobrado},00");
+                            MessageBox.Show($"O veículo ficou: {veiculo.TempoPermanencia} minutos no estacionamento \n O valor a ser cobrado é: R$ {veiculo.ValorCobrado},00 reais");
                         }
                     }
                     else
