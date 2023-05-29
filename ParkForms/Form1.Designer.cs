@@ -180,7 +180,7 @@
             // 
             lblVagas.AutoSize = true;
             lblVagas.ForeColor = Color.LawnGreen;
-            lblVagas.Location = new Point(740, 78);
+            lblVagas.Location = new Point(734, 78);
             lblVagas.Name = "lblVagas";
             lblVagas.Size = new Size(38, 15);
             lblVagas.TabIndex = 14;
