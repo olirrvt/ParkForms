@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace ParkForms
 {
     public partial class Form1 : Form
@@ -26,7 +28,31 @@ namespace ParkForms
             lblEntrada.Clear();
         }
 
-        // Registrar
+        private static bool VerificarHorarioEntrada(string horaEntrada)
+        {
+            if (DateTime.TryParseExact(horaEntrada, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime hora))
+            {
+                DateTime horaMinima = DateTime.ParseExact("07:00", "HH:mm", CultureInfo.InvariantCulture);
+                DateTime horaMaxima = DateTime.ParseExact("20:00", "HH:mm", CultureInfo.InvariantCulture);
+
+                if (hora >= horaMinima && hora <= horaMaxima)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Horário de entrada inválido. \n Os carros só podem ser cadastrados de 07:00 às 20:00. ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Formato de hora inválido. Use o formato HH:mm.");
+            }
+
+            return false;
+        }
+
+        // Registrar Entrada ou Saída
         private void button1_Click(object sender, EventArgs e)
         {
             Veiculo veiculo;
@@ -35,20 +61,23 @@ namespace ParkForms
             string horaEntrada = lblEntrada.Text;
             string horaSaida = lblSaida.Text;
 
+
             if (!String.IsNullOrEmpty(horaEntrada))
             {
-                veiculo = new Veiculo(placaVeiculo, horaEntrada);
-
-                if (!lista.Contains(veiculo))
+                if (VerificarHorarioEntrada(horaEntrada))
                 {
-                    lista.Add(veiculo);
-                    lstEntrada.Items.Add($"Placa: {veiculo.PlacaVeiculo} | Data: {veiculo.DataEntrada} | Entrada: {veiculo.HoraEntrada}");
-                }
-                else
-                {
-                    MessageBox.Show("Esse veículo já está na garagem!");
-                }
+                    veiculo = new Veiculo(placaVeiculo, horaEntrada);
 
+                    if (!lista.Contains(veiculo))
+                    {
+                        lista.Add(veiculo);
+                        lstEntrada.Items.Add($"Placa: {veiculo.PlacaVeiculo} | Data: {veiculo.DataEntrada} | Entrada: {veiculo.HoraEntrada}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Esse veículo já está na garagem!");
+                    }
+                }
             }
             else if (!String.IsNullOrEmpty(horaSaida))
             {
