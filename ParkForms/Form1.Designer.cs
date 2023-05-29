@@ -40,6 +40,8 @@
             btnRegistrar = new Button();
             lstEntrada = new ListBox();
             lstSaida = new ListBox();
+            label5 = new Label();
+            lblVagas = new Label();
             SuspendLayout();
             // 
             // label1
@@ -149,7 +151,7 @@
             // 
             lstEntrada.FormattingEnabled = true;
             lstEntrada.ItemHeight = 15;
-            lstEntrada.Location = new Point(514, 91);
+            lstEntrada.Location = new Point(539, 102);
             lstEntrada.Name = "lstEntrada";
             lstEntrada.Size = new Size(288, 154);
             lstEntrada.TabIndex = 11;
@@ -158,10 +160,31 @@
             // 
             lstSaida.FormattingEnabled = true;
             lstSaida.ItemHeight = 15;
-            lstSaida.Location = new Point(513, 269);
+            lstSaida.Location = new Point(538, 280);
             lstSaida.Name = "lstSaida";
             lstSaida.Size = new Size(289, 154);
             lstSaida.TabIndex = 12;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.AppWorkspace;
+            label5.Location = new Point(617, 76);
+            label5.Name = "label5";
+            label5.Size = new Size(121, 17);
+            label5.TabIndex = 13;
+            label5.Text = "Número de Vagas:";
+            // 
+            // lblVagas
+            // 
+            lblVagas.AutoSize = true;
+            lblVagas.ForeColor = Color.LawnGreen;
+            lblVagas.Location = new Point(740, 78);
+            lblVagas.Name = "lblVagas";
+            lblVagas.Size = new Size(38, 15);
+            lblVagas.TabIndex = 14;
+            lblVagas.Text = "label6";
             // 
             // Form1
             // 
@@ -169,6 +192,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(900, 525);
+            Controls.Add(lblVagas);
+            Controls.Add(label5);
             Controls.Add(lstSaida);
             Controls.Add(lstEntrada);
             Controls.Add(btnRegistrar);
@@ -201,5 +226,7 @@
         private Button btnRegistrar;
         private ListBox lstEntrada;
         private ListBox lstSaida;
+        private Label label5;
+        private Label lblVagas;
     }
 }
