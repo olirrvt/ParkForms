@@ -26,6 +26,7 @@ namespace ParkForms
             lblEntrada.Clear();
         }
 
+        // Registrar
         private void button1_Click(object sender, EventArgs e)
         {
             Veiculo veiculo;
