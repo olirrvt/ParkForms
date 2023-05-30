@@ -16,6 +16,8 @@ namespace ParkForms
             InitializeComponent();
             lista = new List<Veiculo>();
             exibeVagas();
+
+            timer1.Start();
         }
 
         private void exibeVagas()
@@ -52,12 +54,12 @@ namespace ParkForms
                 }
                 else
                 {
-                    MessageBox.Show("Horário de entrada inválido. \n Os carros só podem ser cadastrados de 07:00 às 20:00. ");
+                    MessageBox.Show("Horário de entrada inválido. \n Os carros só podem ser cadastrados de 07:00 às 20:00. ", "Atenção");
                 }
             }
             else
             {
-                MessageBox.Show("Formato de hora inválido. Use o formato HH:mm.");
+                MessageBox.Show("Formato de hora inválido. Use o formato HH:mm.", "Atenção");
             }
 
             return false;
@@ -74,7 +76,7 @@ namespace ParkForms
 
             if (vagas == 0)
             {
-                MessageBox.Show("Não temos vagas no momento!");
+                MessageBox.Show("Não temos vagas no momento!", "Atenção");
             }
             else
             {
@@ -94,7 +96,7 @@ namespace ParkForms
                         }
                         else
                         {
-                            MessageBox.Show("Esse veículo já está na garagem!");
+                            MessageBox.Show("Esse veículo já está na garagem!", "Atenção");
                         }
                     }
                 }
@@ -124,20 +126,35 @@ namespace ParkForms
                             exibeVagas();
 
                             lstSaida.Items.Add($"{veiculo.PlacaVeiculo} | {veiculo.DataEntrada} | {veiculo.HoraEntrada} | {veiculo.TempoPermanencia} minutos | R$ {veiculo.ValorCobrado},00");
-                            MessageBox.Show($"O veículo ficou: {veiculo.TempoPermanencia} minutos no estacionamento \n O valor a ser cobrado é: R$ {veiculo.ValorCobrado},00 reais");
+                            MessageBox.Show($"O veículo ficou: {veiculo.TempoPermanencia} minutos no estacionamento \n O valor a ser cobrado é: R$ {veiculo.ValorCobrado},00 reais", "Aviso de Cobrança");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Veículo não encontrado na garagem!");
+                        MessageBox.Show("Veículo não encontrado na garagem!", "Atenção");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite um valor para registrar!");
+                    MessageBox.Show("Digite um valor para registrar!", "Atenção");
                 }
             }
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             lblPlaca = new TextBox();
             btnEntrada = new Button();
@@ -42,6 +43,11 @@
             lstSaida = new ListBox();
             label5 = new Label();
             lblVagas = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            labelData = new Label();
+            labelHora = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -92,11 +98,12 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Orange;
-            label2.Location = new Point(326, 22);
+            label2.Location = new Point(358, 29);
             label2.Name = "label2";
             label2.Size = new Size(202, 25);
             label2.TabIndex = 4;
             label2.Text = "PARKWAY PROGRAM";
+            label2.Click += label2_Click;
             // 
             // lblEntrada
             // 
@@ -151,7 +158,7 @@
             // 
             lstEntrada.FormattingEnabled = true;
             lstEntrada.ItemHeight = 15;
-            lstEntrada.Location = new Point(539, 102);
+            lstEntrada.Location = new Point(556, 107);
             lstEntrada.Name = "lstEntrada";
             lstEntrada.Size = new Size(288, 154);
             lstEntrada.TabIndex = 11;
@@ -160,7 +167,7 @@
             // 
             lstSaida.FormattingEnabled = true;
             lstSaida.ItemHeight = 15;
-            lstSaida.Location = new Point(538, 280);
+            lstSaida.Location = new Point(555, 313);
             lstSaida.Name = "lstSaida";
             lstSaida.Size = new Size(289, 154);
             lstSaida.TabIndex = 12;
@@ -170,29 +177,84 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.AppWorkspace;
-            label5.Location = new Point(602, 76);
+            label5.Location = new Point(627, 487);
             label5.Name = "label5";
             label5.Size = new Size(121, 17);
             label5.TabIndex = 13;
             label5.Text = "Número de Vagas:";
+            label5.Click += label5_Click;
             // 
             // lblVagas
             // 
             lblVagas.AutoSize = true;
             lblVagas.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblVagas.ForeColor = Color.LawnGreen;
-            lblVagas.Location = new Point(716, 76);
+            lblVagas.Location = new Point(744, 487);
             lblVagas.Name = "lblVagas";
             lblVagas.Size = new Size(28, 17);
             lblVagas.TabIndex = 14;
             lblVagas.Text = "ND";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(666, 287);
+            label6.Name = "label6";
+            label6.Size = new Size(63, 20);
+            label6.TabIndex = 15;
+            label6.Text = "SAÍDAS";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.LawnGreen;
+            label7.Location = new Point(651, 73);
+            label7.Name = "label7";
+            label7.Size = new Size(89, 20);
+            label7.TabIndex = 16;
+            label7.Text = "ENTRADAS";
+            // 
+            // labelData
+            // 
+            labelData.AutoSize = true;
+            labelData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelData.ForeColor = Color.Orange;
+            labelData.Location = new Point(12, 9);
+            labelData.Name = "labelData";
+            labelData.Size = new Size(77, 15);
+            labelData.TabIndex = 17;
+            labelData.Text = "dd/MM/yyyy";
+            // 
+            // labelHora
+            // 
+            labelHora.AutoSize = true;
+            labelHora.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelHora.ForeColor = Color.Orange;
+            labelHora.Location = new Point(19, 28);
+            labelHora.Name = "labelHora";
+            labelHora.Size = new Size(63, 15);
+            labelHora.TabIndex = 18;
+            labelHora.Text = "HH:mm:ss";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(900, 525);
+            ClientSize = new Size(960, 559);
+            Controls.Add(labelHora);
+            Controls.Add(labelData);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(lblVagas);
             Controls.Add(label5);
             Controls.Add(lstSaida);
@@ -229,5 +291,10 @@
         private ListBox lstSaida;
         private Label label5;
         private Label lblVagas;
+        private Label label6;
+        private Label label7;
+        private Label labelData;
+        private Label labelHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }
