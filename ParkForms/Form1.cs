@@ -5,8 +5,8 @@ namespace ParkForms
 {
     public partial class Form1 : Form
     {
-        private string caminhoEntrada = @"C:\Users\Taylor\Desktop\parkforms\EntradaVeiculos.dat";
-        private string caminhoSaida = @"C:\Users\Taylor\Desktop\parkforms\SaidaVeiculos.dat";
+        private string caminhoEntrada = @"C:\Users\taylor.oliveira\Desktop\parkforms\EntradaVeiculos.dat";
+        private string caminhoSaida = @"C:\Users\taylor.oliveira\Desktop\parkforms\SaidaVeiculos.dat";
 
         private List<Veiculo> lista;
         private int vagas = 50;
@@ -70,7 +70,7 @@ namespace ParkForms
         {
             Veiculo veiculo;
             bool remove = false;
-            string placaVeiculo = lblPlaca.Text;
+            string placaVeiculo = lblPlaca.Text.ToUpper();
             string horaEntrada = lblEntrada.Text;
             string horaSaida = lblSaida.Text;
 
@@ -92,6 +92,7 @@ namespace ParkForms
                             exibeVagas();
 
                             lista.Add(veiculo);
+                            Persistencia.gravarArquivoVeiculosEntrada(lista, caminhoEntrada);
                             lstEntrada.Items.Add($"Placa: {veiculo.PlacaVeiculo} | Data: {veiculo.DataEntrada} | Entrada: {veiculo.HoraEntrada}");
                         }
                         else
@@ -125,6 +126,7 @@ namespace ParkForms
                             vagas++;
                             exibeVagas();
 
+                            Persistencia.atualizarSaidaArquivo(veiculo, caminhoSaida);
                             lstSaida.Items.Add($"{veiculo.PlacaVeiculo} | {veiculo.DataEntrada} | {veiculo.HoraEntrada} | {veiculo.TempoPermanencia} minutos | R$ {veiculo.ValorCobrado},00");
                             MessageBox.Show($"O veículo ficou: {veiculo.TempoPermanencia} minutos no estacionamento \n O valor a ser cobrado é: R$ {veiculo.ValorCobrado},00 reais", "Aviso de Cobrança");
                         }
